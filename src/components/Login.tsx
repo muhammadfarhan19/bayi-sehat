@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const route = useRouter();
   return (
     <form className="w-full">
       <div className="mb-5 ">
@@ -11,7 +13,7 @@ const Login = () => {
           NIK
         </label>
         <input
-          type="email"
+          type="text"
           id="email"
           className="bg-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
           required
@@ -31,15 +33,9 @@ const Login = () => {
           required
         />
       </div>
-      <p className="mb-5">
-        Belum punya akun?
-        <Link href="/components/Register" className="text-blue-600">
-          {" "}
-          Daftar
-        </Link>
-      </p>
       <button
         type="submit"
+        onClick={() => {route.push("/home/Dashboard")}}
         className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
       >
         Masuk

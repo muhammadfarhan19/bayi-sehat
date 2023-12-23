@@ -11,10 +11,10 @@ function ArrowIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      className="lucide lucide-chevron-right"
+      className="lucide lucide-chevron-left"
       viewBox="0 0 24 24"
     >
-      <path d="M9 18l6-6-6-6"></path>
+      <path d="M15 18l-6-6 6-6"></path>
     </svg>
   );
 }
