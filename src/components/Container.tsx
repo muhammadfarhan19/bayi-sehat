@@ -8,7 +8,6 @@ import MobileSidebar from "./MobileSidebar";
 const Container = ({children}: {children: ReactNode}) => {
   const { isOpen, setIsOpen } = useSidebarToggle();
   const route = useRouter();
-
   return (
     <main className="w-full h-screen flex flex-col sm:flex-row">
       <aside
@@ -19,7 +18,7 @@ const Container = ({children}: {children: ReactNode}) => {
         <Sidebar />
       </aside>
       <aside className="w-full h-screen flex flex-col overflow-y-auto">
-        <nav className="h-14 sm:h-20 w-full flex justify-end p-2 sm:py-5 sm:px-9 border-b bg-emerald-500">
+        <nav className="h-14 sm:h-20 w-full flex justify-end p-2 sm:py-5 sm:px-9 border-b bg-teal-500">
           <section
             onClick={() => {
               route.push("/dashboard/profile");

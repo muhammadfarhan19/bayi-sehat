@@ -54,7 +54,7 @@ const Sidebar = () => {
         </div>
         <button
           onClick={handleToggle}
-          className="transition-all duration-200 rounded-full p-2 hover:bg-emerald-500"
+          className="transition-all duration-200 rounded-full p-2 hover:bg-teal-500"
         >
           <HamburgerIcon />
         </button>
@@ -65,7 +65,7 @@ const Sidebar = () => {
             <Link
               href={menuItem.url}
               key={menuItem.id}
-              className={`py-3 flex gap-2 items-center rounded-md transition-all duration-150 hover:bg-emerald-500 ${
+              className={`py-3 flex gap-2 items-center rounded-md transition-all duration-150 hover:bg-teal-500 ${
                 !isOpen ? "px-2 py-2 justify-center " : "px-3"
               }`}
             >

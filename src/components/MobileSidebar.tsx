@@ -37,7 +37,7 @@ const MobileSidebar = () => {
         <Link
           href={menuItem.url}
           key={menuItem.id}
-          className="h-full flex flex-col items-center justify-center p-3 hover:bg-emerald-500"
+          className="h-full flex flex-col items-center justify-center p-3 hover:bg-teal-500"
         >
           {menuItem.icon}
         </Link>

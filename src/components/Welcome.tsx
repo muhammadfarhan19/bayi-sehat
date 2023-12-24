@@ -7,7 +7,7 @@ export default function Welcome() {
   return (
     <main className="grid place-items-center p-5 w-full h-screen">
       <section className="flex flex-col justify-between w-full h-auto sm:w-3/4 md:w-3/5 lg:w-2/5 rounded-xl shadow-2xl">
-        <aside className="w-full flex justify-between bg-blue-600 rounded-t-lg px-3 py-4">
+        <aside className="w-full flex justify-between bg-teal-500 rounded-t-lg px-3 py-4">
           <h1 className="text-3xl font-medium text-white">
             {isRegistered ? "Login" : "Daftar"}
           </h1>
