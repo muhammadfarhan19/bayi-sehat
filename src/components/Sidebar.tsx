@@ -1,11 +1,11 @@
-import Link from "next/link"
-import ArrowIcon from "./icons/ArrowIcon"
-import BabyIcon from "./icons/BabyIcon"
+import Link from "next/link";
+import BabyIcon from "./icons/BabyIcon";
 import HomeIcon from "./icons/HomeIcon";
 import MonitorIcon from "./icons/MonitorIcon";
 import SettingIcon from "./icons/SettingICon";
 import LogoutIcon from "./icons/LogoutIcon";
 import { useSidebarToggle } from "@/hooks/useSidebarToggle";
+import HamburgerIcon from "./icons/HamburgerIcon";
 
 const Sidebar = () => {
   const { isOpen, setIsOpen } = useSidebarToggle();
@@ -17,19 +17,19 @@ const Sidebar = () => {
       id: 1,
       menuLink: "Dashboard",
       icon: <HomeIcon />,
-      url: "/home/Dashboard",
+      url: "/dashboard",
     },
     {
       id: 2,
       menuLink: "Monitoring",
       icon: <MonitorIcon />,
-      url: "/home/Monitoring",
+      url: "/dashboard/monitoring",
     },
     {
       id: 3,
       menuLink: "Setting",
       icon: <SettingIcon />,
-      url: "/home/Setting",
+      url: "/dashboard/setting",
     },
     {
       id: 2,
@@ -39,38 +39,34 @@ const Sidebar = () => {
     },
   ];
   return (
-    <aside
-      className={`w-2/3 sm:w-72 h-full flex flex-col bg-slate-200 transition-all duration-500 ${
-        !isOpen && "w-16 sm:w-16"
-      }`}
-    >
+    <div className="w-full-h-full">
       <section
-        className={`flex justify-between items-center w-full ps-5 py-3 ${
-          !isOpen && "ps-4"
+        className={`flex justify-between gap-3 items-center w-full py-2 sm:py-5 border-b ${
+          !isOpen ? "px-2" : "px-3"
         }`}
       >
-        <div className="flex items-center gap-2 w-auto">
+        <div
+          className={`flex items-center gap-1 w-auto  ${!isOpen && "hidden"}`}
+        >
           <BabyIcon />
-          <h1 className={`font-bold text-2xl ${!isOpen && "hidden"}`}>
-            bayisehat.com
-          </h1>
+          <h1 className={`font-bold text-xl sm:text-2xl`}>bayisehat.com</h1>
         </div>
         <button
           onClick={handleToggle}
-          className={`p-1.5 -me-5 -mb-14 bg-blue-600 rounded-full transition-all ${
-            !isOpen && "rotate-180"
-          }`}
+          className="transition-all duration-200 rounded-full p-2 hover:bg-emerald-500"
         >
-          <ArrowIcon />
+          <HamburgerIcon />
         </button>
       </section>
-      <section className="w-full flex-grow py-5 px-3">
-        <ul className="h-full flex flex-col relative">
+      <section className={`w-full flex-grow py-8 sm:py-10 ${!isOpen ? "px-2" : "px-3"}`}>
+        <ul className="h-full flex flex-col ">
           {menuItems.map((menuItem) => (
             <Link
               href={menuItem.url}
               key={menuItem.id}
-              className="p-2 border flex gap-2 rounded-md transition-all duration-150 hover:bg-slate-300"
+              className={`py-3 flex gap-2 items-center rounded-md transition-all duration-150 hover:bg-emerald-500 ${
+                !isOpen ? "px-2 py-2 justify-center " : "px-3"
+              }`}
             >
               {menuItem.icon}{" "}
               <span className={`${!isOpen && "hidden"}`}>
@@ -80,8 +76,8 @@ const Sidebar = () => {
           ))}
         </ul>
       </section>
-    </aside>
-  )
-}
+    </div>
+  );
+};
 
 export default Sidebar;

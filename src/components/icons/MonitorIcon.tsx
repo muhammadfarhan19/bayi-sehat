@@ -4,8 +4,8 @@ function MonitorIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
@@ -25,17 +25,17 @@ export default MonitorIcon;
 
 /* 
 <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      className="lucide lucide-activity"
-      viewBox="0 0 24 24"
-    >
-      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-    </svg>
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    className="lucide lucide-activity"
+    viewBox="0 0 24 24"
+  >
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+  </svg>
 */
