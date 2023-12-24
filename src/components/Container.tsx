@@ -3,15 +3,16 @@ import Sidebar from "./Sidebar";
 import BabyIcon from "./icons/BabyIcon";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+import MobileSidebar from "./MobileSidebar";
 
 const Container = ({children}: {children: ReactNode}) => {
   const { isOpen, setIsOpen } = useSidebarToggle();
   const route = useRouter();
 
   return (
-    <main className="w-full h-screen flex">
+    <main className="w-full h-screen flex flex-col sm:flex-row">
       <aside
-        className={`h-full flex flex-col transition-all duration-500 border-e ${
+        className={`h-full hidden sm:flex flex-col transition-all duration-500 border-e ${
           !isOpen ? "w-14" : "w-2/3 sm:w-72"
         }`}
       >
@@ -32,6 +33,9 @@ const Container = ({children}: {children: ReactNode}) => {
         <section className="w-full h-full p-3 sm:p-10">
           {children}
         </section>
+      </aside>
+      <aside className="fixed bottom-0 sm:hidden">
+        <MobileSidebar />
       </aside>
     </main>
   );

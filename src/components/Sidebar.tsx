@@ -6,6 +6,7 @@ import SettingIcon from "./icons/SettingICon";
 import LogoutIcon from "./icons/LogoutIcon";
 import { useSidebarToggle } from "@/hooks/useSidebarToggle";
 import HamburgerIcon from "./icons/HamburgerIcon";
+import MobileSidebar from "./MobileSidebar";
 
 const Sidebar = () => {
   const { isOpen, setIsOpen } = useSidebarToggle();
@@ -39,7 +40,7 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className="w-full-h-full">
+    <div className="w-full h-full">
       <section
         className={`flex justify-between gap-3 items-center w-full py-2 sm:py-5 border-b ${
           !isOpen ? "px-2" : "px-3"
