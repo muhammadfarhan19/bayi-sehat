@@ -11,7 +11,7 @@ function MonitorIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      className="lucide lucide-monitor"
+      className="lucide lucide-monitor w-4 sm:w-5"
       viewBox="0 0 24 24"
     >
       <rect width="20" height="14" x="2" y="3" rx="2"></rect>
