@@ -4,17 +4,18 @@ function NewsIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
       fill="none"
-      className="w-4 sm:w-5"
-      viewBox="0 0 20 20"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className="lucide lucide-book-a w-4 sm:w-5"
+      viewBox="0 0 24 24"
     >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M18 5h1v12a2 2 0 01-2 2m0 0a2 2 0 01-2-2V2a1 1 0 00-1-1H2a1 1 0 00-1 1v15a2 2 0 002 2h14zM10 4h2m-2 3h2m-8 3h8m-8 3h8m-8 3h8M4 4h3v3H4V4z"
-      ></path>
+      <path d="M4 19.5v-15A2.5 2.5 0 016.5 2H20v20H6.5a2.5 2.5 0 010-5H20"></path>
+      <path d="M8 13l4-7 4 7M9.1 11h5.7"></path>
     </svg>
   );
 }

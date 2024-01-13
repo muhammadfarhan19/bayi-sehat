@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Login = () => {
@@ -21,22 +22,15 @@ const Login = () => {
       />
       <button
         type="submit"
-        onClick={() => {
-          router.push("/dashboard");
-        }}
         className="font-medium py-2 rounded-lg bg-teal-400 text-white"
       >
-        Masuk
+        <Link href="/dashboard">Masuk</Link>
       </button>
       <p>
         Belum memiliki akun?{" "}
-        <a
-          href="register"
-          className="text-blue-500"
-          onClick={() => router.push("/register")}
-        >
+        <Link href="register" className="text-blue-500">
           Daftar
-        </a>
+        </Link>
       </p>
     </form>
   );

@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Register = () => {
-  const router = useRouter();
   const inputStyle = "border-2 w-full p-2 rounded-lg";
   return (
     <form action="" className="w-full py-5 flex flex-col gap-3">
@@ -39,13 +37,9 @@ const Register = () => {
       </button>
       <p>
         Sudah memiliki akun?{" "}
-        <a
-          href="register"
-          className="text-blue-500"
-          onClick={() => router.push("/")}
-        >
+        <Link href="/" className="text-blue-500">
           Masuk
-        </a>
+        </Link>
       </p>
     </form>
   );

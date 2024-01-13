@@ -1,10 +1,7 @@
 import { ReactNode } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import SideLoginPage from "./SideLoginPage";
 
 const Welcome = ({ children }: { children: ReactNode }) => {
-  const router = useRouter();
   return (
     <main className="sm:p-5 lg:p-10 w-full h-[100dvh]">
       <section className="w-full h-full bg-teal-400 sm:rounded-xl flex justify-center items-center p-5 sm:pe-0">

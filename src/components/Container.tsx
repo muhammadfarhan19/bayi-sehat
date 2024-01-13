@@ -1,18 +1,16 @@
 import Sidebar from "./Sidebar";
-import { useRouter } from "next/router";
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 
 const Container = ({ children }: { children: ReactNode }) => {
-  const route = useRouter();
   return (
     <main className="w-full h-screen flex flex-col">
       <Navbar />
       <section className="flex w-full h-full">
-        <aside className="w-20 sm:w-64 border">
+        <aside className="w-20 md:w-64 border-e">
           <Sidebar />
         </aside>
-        <aside>{children}</aside>
+        <aside className="w-full p-5 md:p-10">{children}</aside>
       </section>
     </main>
   );
