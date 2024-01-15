@@ -1,35 +1,63 @@
 import Link from "next/link";
-import InputNIK from "./customComponents/InputNIK";
+import { usePasswordValidator } from "@/hooks/usePasswordValidation";
+import InputField from "./customComponents/InputField";
+import Button from "./customComponents/Button";
+import { useNIKValidator } from "@/hooks/useNIKValidation";
 
 const Register = () => {
+  const {
+    password,
+    repeatPassword,
+    isValidPassword,
+    isValidRepeatPassword,
+    handlePasswordChange,
+    handleRepeatPasswordChange,
+  } = usePasswordValidator();
+  const { nik, isValidNIK, handleNIKChange } = useNIKValidator();
+
   const inputStyle = "border-2 w-full p-2 rounded-lg";
   return (
     <form action="" className="w-full flex flex-col gap-3">
-      <InputNIK customClassName={inputStyle} />
-      <input
+      <InputField
         type="text"
-        name=""
-        id=""
-        className={inputStyle}
-        placeholder="Nama Lengkap"
+        style={inputStyle}
+        value={nik}
+        validation={isValidNIK}
+        handle={handleNIKChange}
+        warning="NIK Harus Angka 16 digit"
+        placeholder="NIK"
       />
-      <input
+      <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          className={inputStyle}
+          placeholder="Nama Lengkap"
+        />
+      </div>
+      <InputField
         type="password"
-        name=""
-        id=""
-        className={inputStyle}
-        placeholder="Sandi"
+        style={inputStyle}
+        value={password}
+        validation={isValidPassword}
+        handle={handlePasswordChange}
+        warning="Minimal : 8 Karakter, 1 Kapital, 1 Angka, 1 simbol"
+        placeholder="Kata Sandi"
       />
-      <input
+      <InputField
         type="password"
-        name=""
-        id=""
-        className={inputStyle}
-        placeholder="Ulangi Sandi"
+        style={inputStyle}
+        value={repeatPassword}
+        validation={isValidRepeatPassword}
+        handle={handleRepeatPasswordChange}
+        warning="Password Harus Sama"
+        placeholder="Ulangi Kata Sandi"
       />
-      <button className="font-medium py-2 rounded-lg bg-teal-400 text-white">
-        Daftar
-      </button>
+      <Button
+        style="font-medium py-2 rounded-lg bg-teal-400 text-white"
+        value="Daftar"
+      />
       <p>
         Sudah memiliki akun?{" "}
         <Link href="/" className="text-blue-500">

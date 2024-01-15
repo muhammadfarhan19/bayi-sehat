@@ -1,11 +1,15 @@
-import { SidebarToggleProvider } from '@/hooks/useSidebarToggle'
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { NIKValidatorProvider } from "@/hooks/useNIKValidation";
+import { PasswordProvider } from "@/hooks/usePasswordValidation";
+import { SidebarToggleProvider } from "@/hooks/useSidebarToggle";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <SidebarToggleProvider>
-      <Component {...pageProps} />
-    </SidebarToggleProvider>
-  )
+    <NIKValidatorProvider>
+      <PasswordProvider>
+        <Component {...pageProps} />
+      </PasswordProvider>
+    </NIKValidatorProvider>
+  );
 }
