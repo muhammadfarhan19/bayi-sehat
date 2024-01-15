@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import SideLoginPage from "./SideLoginPage";
 import { NIKValidatorProvider } from "@/hooks/useNIKValidation";
+import ImageContainer from "./customComponents/ImageContainer";
 
 const Welcome = ({ children }: { children: ReactNode }) => {
   return (
@@ -9,6 +10,7 @@ const Welcome = ({ children }: { children: ReactNode }) => {
         <section className="w-full h-full bg-teal-400 sm:rounded-xl flex justify-center items-center p-5 sm:pe-0">
           <aside className="w-full h-full sm:w-96 p-5 bg-white rounded-xl">
             <section className="flex flex-col justify-center items-center h-full gap-5 w-full">
+              <ImageContainer customClassName="sm:hidden w-1/2" />
               <aside className="text-center text-xl font-medium text-teal-400">
                 <p>Selamat datang di</p>
                 <p>bayisehat.com</p>

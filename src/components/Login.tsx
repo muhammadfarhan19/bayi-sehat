@@ -1,8 +1,7 @@
-import { useNIKValidator } from "@/hooks/useNIKValidation";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import InputNIK from "./InputNIK";
+import InputNIK from "./customComponents/InputNIK";
 
 const Login = () => {
   const router = useRouter();
@@ -16,7 +15,7 @@ const Login = () => {
   return (
     <form
       onSubmit={handleSubmitLogin}
-      className="w-full py-5 flex flex-col gap-3"
+      className="w-full flex flex-col gap-3"
     >
       <InputNIK customClassName={inputStyle} />
 

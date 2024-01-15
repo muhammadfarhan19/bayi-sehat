@@ -1,10 +1,10 @@
 import Link from "next/link";
-import InputNIK from "./InputNIK";
+import InputNIK from "./customComponents/InputNIK";
 
 const Register = () => {
   const inputStyle = "border-2 w-full p-2 rounded-lg";
   return (
-    <form action="" className="w-full py-5 flex flex-col gap-3">
+    <form action="" className="w-full flex flex-col gap-3">
       <InputNIK customClassName={inputStyle} />
       <input
         type="text"
