@@ -1,45 +1,46 @@
+import { useNIKValidator } from "@/hooks/useNIKValidation";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import React from "react";
+import InputNIK from "./InputNIK";
 
 const Login = () => {
-  const route = useRouter();
+  const router = useRouter();
+  const inputStyle = "border-2 w-full p-2 rounded-lg";
+
+  const handleSubmitLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push("/dashboard");
+  };
+
   return (
-    <form className="w-full">
-      <div className="mb-5 ">
-        <label
-          htmlFor="email"
-          className="block mb-2 text-sm font-medium text-gray-900"
-        >
-          NIK
-        </label>
-        <input
-          type="text"
-          id="email"
-          className="bg-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required
-        />
-      </div>
-      <div className="mb-5 ">
-        <label
-          htmlFor="password"
-          className="block mb-2 text-sm font-medium text-gray-900 "
-        >
-          Password
-        </label>
+    <form
+      onSubmit={handleSubmitLogin}
+      className="w-full py-5 flex flex-col gap-3"
+    >
+      <InputNIK customClassName={inputStyle} />
+
+      <div>
         <input
           type="password"
-          id="password"
-          className="bg-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          required
+          name=""
+          id=""
+          className={inputStyle}
+          placeholder="Sandi"
         />
       </div>
       <button
         type="submit"
-        onClick={() => {route.push("/dashboard")}}
-        className="text-white bg-teal-400 hover:bg-teal-500 focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+        className="font-medium py-2 rounded-lg bg-teal-400 text-white"
       >
         Masuk
       </button>
+      <p>
+        Belum memiliki akun?{" "}
+        <Link href="register" className="text-blue-500">
+          Daftar
+        </Link>
+      </p>
     </form>
   );
 };

@@ -1,23 +1,23 @@
 import React from "react";
 
-function NewsIcon() {
+function CardIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="24"
+      height="24"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      className="lucide lucide-book-a w-4 sm:w-5"
+      className="lucide lucide-credit-card"
       viewBox="0 0 24 24"
     >
-      <path d="M4 19.5v-15A2.5 2.5 0 016.5 2H20v20H6.5a2.5 2.5 0 010-5H20"></path>
-      <path d="M8 13l4-7 4 7M9.1 11h5.7"></path>
+      <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+      <path d="M2 10L22 10"></path>
     </svg>
   );
 }
 
-export default NewsIcon;
+export default CardIcon;

@@ -1,23 +1,23 @@
 import React from "react";
 
-function NewsIcon() {
+function PersonIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="24"
+      height="24"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      className="lucide lucide-book-a w-4 sm:w-5"
+      className="lucide lucide-user-round"
       viewBox="0 0 24 24"
     >
-      <path d="M4 19.5v-15A2.5 2.5 0 016.5 2H20v20H6.5a2.5 2.5 0 010-5H20"></path>
-      <path d="M8 13l4-7 4 7M9.1 11h5.7"></path>
+      <circle cx="12" cy="8" r="5"></circle>
+      <path d="M20 21a8 8 0 00-16 0"></path>
     </svg>
   );
 }
 
-export default NewsIcon;
+export default PersonIcon;

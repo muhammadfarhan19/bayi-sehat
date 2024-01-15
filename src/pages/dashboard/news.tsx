@@ -1,10 +1,10 @@
 import Container from "@/components/Container";
-import Setting from "@/components/dashboard/Setting";
+import News from "@/components/dashboard/News";
 
 const SettingPage = () => {
   return (
     <Container>
-      <Setting />
+      <News />
     </Container>
   );
 };

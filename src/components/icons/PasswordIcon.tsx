@@ -1,23 +1,23 @@
 import React from "react";
 
-function NewsIcon() {
+function PasswordIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="24"
+      height="24"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      className="lucide lucide-book-a w-4 sm:w-5"
+      className="lucide lucide-lock"
       viewBox="0 0 24 24"
     >
-      <path d="M4 19.5v-15A2.5 2.5 0 016.5 2H20v20H6.5a2.5 2.5 0 010-5H20"></path>
-      <path d="M8 13l4-7 4 7M9.1 11h5.7"></path>
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+      <path d="M7 11V7a5 5 0 0110 0v4"></path>
     </svg>
   );
 }
 
-export default NewsIcon;
+export default PasswordIcon;
