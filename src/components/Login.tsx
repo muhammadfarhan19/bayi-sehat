@@ -1,11 +1,16 @@
-import { useNIKValidator } from "@/hooks/useNIKValidation";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import InputNIK from "./InputNIK";
+import Button from "./customComponents/Button";
+import InputField from "./customComponents/InputField";
+import { useNIKValidator } from "@/hooks/useNIKValidation";
+import { usePasswordValidator } from "@/hooks/usePasswordValidation";
 
 const Login = () => {
   const router = useRouter();
+  const { nik, isValidNIK, handleNIKChange } = useNIKValidator();
+  const { password, isValidPassword, handlePasswordChange } =
+    usePasswordValidator();
   const inputStyle = "border-2 w-full p-2 rounded-lg";
 
   const handleSubmitLogin = (e: React.FormEvent<HTMLFormElement>) => {
@@ -14,27 +19,29 @@ const Login = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmitLogin}
-      className="w-full py-5 flex flex-col gap-3"
-    >
-      <InputNIK customClassName={inputStyle} />
-
-      <div>
-        <input
-          type="password"
-          name=""
-          id=""
-          className={inputStyle}
-          placeholder="Sandi"
-        />
-      </div>
-      <button
-        type="submit"
-        className="font-medium py-2 rounded-lg bg-teal-400 text-white"
-      >
-        Masuk
-      </button>
+    <form onSubmit={handleSubmitLogin} className="w-full flex flex-col gap-3">
+      <InputField
+        type="text"
+        style={inputStyle}
+        value={nik}
+        validation={isValidNIK}
+        handle={handleNIKChange}
+        warning="NIK Harus Angka 16 digit"
+        placeholder="NIK"
+      />
+      <InputField
+        type="password"
+        style={inputStyle}
+        value={password}
+        validation={isValidPassword}
+        handle={handlePasswordChange}
+        warning="Minimal : 8 Karakter, 1 Kapital, 1 Angka, 1 simbol"
+        placeholder="Kata Sandi"
+      />
+      <Button
+        style="font-medium py-2 rounded-lg bg-teal-400 text-white"
+        value="Masuk"
+      />
       <p>
         Belum memiliki akun?{" "}
         <Link href="register" className="text-blue-500">
