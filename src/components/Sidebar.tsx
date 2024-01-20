@@ -37,13 +37,12 @@ const Sidebar = () => {
   return (
     <div className="w-full h-full">
       <ul className="h-full flex flex-col px-0 md:p-5">
-        {menuItems.map((menuItem) => (
+        {menuItems.map((menuItem, index) => (
           <Link
             href={menuItem.url}
-            key={menuItem.id}
+            key={index}
             className={`p-2 flex flex-col md:flex-row gap-1 md:gap-2 items-center md:rounded-md transition-all duration-150 hover:bg-teal-500 ${
-              menuItem.menuLink === paths[paths.length - 1] &&
-              "bg-teal-400"
+              menuItem.menuLink === paths[paths.length - 1] && "bg-teal-400"
             }`}
           >
             {menuItem.icon}
