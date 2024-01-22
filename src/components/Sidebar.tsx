@@ -4,6 +4,8 @@ import MonitorIcon from "./icons/MonitorIcon";
 import LogoutIcon from "./icons/LogoutIcon";
 import NewsIcon from "./icons/NewsIcon";
 import { useRouter } from "next/router";
+import { useSidebarToggle } from "@/hooks/useSidebarToggle";
+import ArrowIcon from "./icons/ArrowIcon";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -34,19 +36,30 @@ const Sidebar = () => {
       url: "/",
     },
   ];
+  const { isOpen, handleFunction } = useSidebarToggle();
+
   return (
-    <div className="w-full h-full">
-      <ul className="h-full flex flex-col px-0 md:p-5">
+    <div className="w-full h-full flex flex-col relative rounded">
+      <ul className="px-0">
+        <button
+          className={`bg-teal-500 w-full flex rounded-t h-10 items-center mb-1 ${
+            isOpen ? "justify-end pr-2" : "justify-center"
+          }`}
+          onClick={handleFunction}
+        >
+          <ArrowIcon />
+        </button>
         {menuItems.map((menuItem, index) => (
           <Link
             href={menuItem.url}
             key={index}
-            className={`p-2 flex flex-col md:flex-row gap-1 md:gap-2 items-center md:rounded-md transition-all duration-150 hover:bg-teal-500 ${
-              menuItem.menuLink === paths[paths.length - 1] && "bg-teal-400"
+            className={`h-12 px-3 text-white flex items-center justify-start gap-3 transition-all duration-150 hover:bg-white hover:text-black ${
+              menuItem.menuLink === paths[paths.length - 1] &&
+              "bg-white text-black"
             }`}
           >
-            {menuItem.icon}
-            <span className="text-xs md:text-base capitalize">
+            <span>{menuItem.icon}</span>
+            <span className={`capitalize font-medium ${!isOpen && "hidden"}`}>
               {menuItem.menuLink}
             </span>
           </Link>
