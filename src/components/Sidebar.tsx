@@ -53,7 +53,7 @@ const Sidebar = () => {
           <Link
             href={menuItem.url}
             key={index}
-            className={`h-12 px-3 text-white flex items-center justify-start gap-3 transition-all duration-150 hover:bg-white hover:text-black ${
+            className={`h-12 px-3 flex items-center justify-start gap-3 transition-all duration-150 hover:bg-white ${
               menuItem.menuLink === paths[paths.length - 1] &&
               "bg-white text-black"
             }`}
