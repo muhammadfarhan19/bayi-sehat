@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
+import { ReactNode } from "react";
+import Header from "../customComponents/Header";
 
 const Home = () => {
-  const router = useRouter();
+  const route = useRouter();
   return (
     <main className="w-full h-full">
-      <section className="border-b pb-3">
-        <h1 className="font-medium text-base md:text-lg">Muhammad Farhan</h1>
-      </section>
-      <section className="my-3">
-        <h1>Profil bayi</h1>
+      <Header title={route.asPath} />
+      <section className="flex flex-col sm:flex-row w-full justify-center items-center">
+        <aside></aside>
       </section>
     </main>
   );

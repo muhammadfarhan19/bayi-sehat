@@ -1,9 +1,14 @@
-import Image from "next/image";
-import logo from "@/assets/images/logo.png";
+import Image, { StaticImageData } from "next/image";
 
-const ImageContainer = ({ style }: { style: string }) => (
+const ImageContainer = ({
+  style,
+  src,
+}: {
+  style: string;
+  src: StaticImageData;
+}) => (
   <section className={style}>
-    <Image src={logo} alt="" className="m-auto" />
+    <Image src={src} alt="" className="m-auto"/>
   </section>
 );
 

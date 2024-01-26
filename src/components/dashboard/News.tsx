@@ -1,9 +1,15 @@
-const News = () => {
+import { ReactNode } from "react";
+import Header from "../customComponents/Header";
+import { useRouter } from "next/router";
+
+const News = ({ children }: { children: ReactNode }) => {
+  const route = useRouter();
   return (
     <main className="w-full h-full">
-      <h1>News Page</h1>
+      <Header title={route.asPath} />
+      {children}
     </main>
-  )
-}
+  );
+};
 
 export default News;
