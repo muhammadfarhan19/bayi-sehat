@@ -39,29 +39,19 @@ const Sidebar = () => {
   const { isOpen, handleFunction } = useSidebarToggle();
 
   return (
-    <div className="w-full h-full flex flex-col relative rounded">
-      <ul className="px-0">
-        <button
-          className={`bg-teal-500 w-full flex rounded-t h-10 items-center mb-1 ${
-            isOpen ? "justify-end pr-2" : "justify-center"
-          }`}
-          onClick={handleFunction}
-        >
-          <ArrowIcon />
-        </button>
+    <div className="w-full h-full flex flex-col relative rounded-xl">
+      <ul className="px-5 py-10">
         {menuItems.map((menuItem, index) => (
           <Link
             href={menuItem.url}
             key={index}
-            className={`h-12 px-3 flex items-center justify-start gap-3 transition-all duration-150 hover:bg-white ${
+            className={`h-12 px-3 flex items-center justify-start my-1 gap-3 transition-all duration-150 hover:bg-teal-500 rounded-md ${
               menuItem.menuLink === paths[paths.length - 1] &&
-              "bg-white text-black"
+              "bg-teal-500 text-black"
             }`}
           >
             <span>{menuItem.icon}</span>
-            <span className={`capitalize font-medium ${!isOpen && "hidden"}`}>
-              {menuItem.menuLink}
-            </span>
+            <span className={`capitalize`}>{menuItem.menuLink}</span>
           </Link>
         ))}
       </ul>

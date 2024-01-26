@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-
 const Header = ({ title }: { title: string }) => {
   const path = title.split("/");
   return (

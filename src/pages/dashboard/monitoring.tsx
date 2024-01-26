@@ -1,5 +1,5 @@
 import Container from "@/components/Container"
-import WeeklyChart from "@/components/charts/WeeklyChart";
+import WeeklyChart from "@/components/contents/monitoring/WeeklyChart";
 import Monitoring from "@/components/dashboard/Monitoring"
 
 const MonitoringPage = () => {
