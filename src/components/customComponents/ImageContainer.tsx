@@ -2,15 +2,13 @@ import Image, { StaticImageData } from "next/image";
 
 const ImageContainer = ({
   style,
-  imgStyle,
   src,
 }: {
   style: string;
-  imgStyle: string;
-  src: StaticImageData | string;
+  src: StaticImageData;
 }) => (
   <section className={style}>
-    <Image src={src} alt="" className={imgStyle} />
+    <Image src={src} alt="" className="m-auto"/>
   </section>
 );
 
