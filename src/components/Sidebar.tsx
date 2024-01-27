@@ -5,7 +5,6 @@ import LogoutIcon from "./icons/LogoutIcon";
 import NewsIcon from "./icons/NewsIcon";
 import { useRouter } from "next/router";
 import { useSidebarToggle } from "@/hooks/useSidebarToggle";
-import ArrowIcon from "./icons/ArrowIcon";
 
 const Sidebar = () => {
   const router = useRouter();
