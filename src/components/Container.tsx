@@ -20,7 +20,7 @@ const Container = ({ children }: { children: ReactNode }) => {
         >
           <Sidebar />
         </aside>
-        <aside className="w-full bg-slate-50 py-12 px-5 rounded-xl">
+        <aside className="w-full bg-slate-50 py-5 sm:py-12 px-5 rounded-xl">
           {children}
         </aside>
       </section>

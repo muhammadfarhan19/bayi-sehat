@@ -3,7 +3,7 @@ import { useSidebarToggle } from "@/hooks/useSidebarToggle";
 const Hamburger = () => {
   const { isOpen, handleFunction } = useSidebarToggle();
   const hamburgerStyle =
-    "w-full h-1 rounded bg-teal-400 transition-all ease-in-out duration-100 bg-teal-500";
+    "w-full h-1 rounded bg-teal-400 transition-all ease-in-out duration-100 bg-white";
 
   return (
     <div
