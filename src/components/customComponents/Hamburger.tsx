@@ -7,7 +7,7 @@ const Hamburger = () => {
 
   return (
     <div
-      className="w-6 py-2 flex flex-col gap-1 cursor-pointer items-center sm:hidden"
+      className="w-6 py-2 flex flex-col gap-1 cursor-pointer items-center md:hidden"
       onClick={handleFunction}
     >
       <div

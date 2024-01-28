@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
 import Header from "../customComponents/Header";
+import WeeklyChart from "../contents/monitoring/WeeklyChart";
 
 const Home = () => {
   const route = useRouter();
@@ -8,7 +8,7 @@ const Home = () => {
     <main className="w-full h-full">
       <Header title={route.asPath} />
       <section className="flex flex-col sm:flex-row w-full justify-center items-center">
-        <aside></aside>
+        <WeeklyChart />
       </section>
     </main>
   );

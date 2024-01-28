@@ -15,8 +15,8 @@ const Container = ({ children }: { children: ReactNode }) => {
       <Navbar />
       <section className="flex w-full h-full relative gap-5 lg:gap-10 p-5 sm:p-8">
         <aside
-          className={`bg-slate-50 h-full w-72 sm:w-80 border absolute transition-all ease-in-out duration-200 rounded-xl sm:block sm:relative
-          ${isOpen ? "translate-x-0" : "-translate-x-96 sm:translate-x-0"}`}
+          className={`bg-slate-50 h-full w-72 sm:w-80 border absolute transition-all ease-in-out duration-200 rounded-xl md:block md:relative
+          ${isOpen ? "translate-x-0" : "-translate-x-96 md:translate-x-0"}`}
         >
           <Sidebar />
         </aside>
