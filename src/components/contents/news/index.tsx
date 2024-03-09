@@ -10,12 +10,12 @@ const NewsContainer = () => {
       image: newsPic,
     },
     {
-      title: "Apa itu Stunting?",
+      title: "Bagaimana Cara Mencegah Stunting?",
       url: "/",
       image: newsPic,
     },
     {
-      title: "Apa itu Stunting?",
+      title: "Bagaimana cara mengatasi Stunting?",
       url: "/",
       image: newsPic,
     },
